@@ -10,13 +10,21 @@ function App() {
 const [todo,setTodo] = useState<string>("");
 const[todoList,setTodoList] = useState<Todo[]>([]);
 
+const uncheckedCount = todoList.filter(el=> !el.isChecked).length;
+
 function updateTodoList(newTodo :Todo) :void {
     if(newTodo.todo.length < 3) return;
     setTodoList([...todoList,newTodo]);
     setTodo("");
 }
 
-function handleOnEventChecked(eventId: string) :void {
+function handleOnEventChecked(eventId?: string) :void {
+    if(!eventId) {
+        setTodoList(list => list.map(todo => {
+            return {...todo,isChecked:true}
+        }));
+    }
+
    setTodoList(list=> {
        return list.map(todo => {
            if(todo.id === eventId) {
@@ -40,8 +48,8 @@ function handleOnEventChecked(eventId: string) :void {
 
             <hr/>
             <div className="bottom">
-                <button onClick={() => {}}>Check All</button>
-                <p> items remaining</p>
+                <button onClick={() => handleOnEventChecked()}>Check All</button>
+                <p> {uncheckedCount} items remaining</p>
             </div>
         </div>
       </div>

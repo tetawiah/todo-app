@@ -38,6 +38,7 @@ h3{
   width: 15%;
 }
 .eventList{
+  height: 400px;
   overflow: scroll;
 }
 .event {
@@ -52,7 +53,6 @@ hr {
   border: 1px solid lightgray;
   margin-left: 5%;
   width: 90%;
-  margin-top: 50%;
 
 }
 
