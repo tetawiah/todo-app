@@ -1,42 +1,72 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.container {
+  display: flex;
+  justify-content: center;
+ align-items: center;
+  height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.main{
+  width: 650px;
+  height: 650px;
+  background: #F0F8FF;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h3{
+  margin-left: 5%;
+  font-weight: bold;
+  font-size: 35px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+#noteInput {
+  border: white;
+  background: #F0F8FF;
+  color: gray;
+  font-size: 20px;
+  width: 80%;
+  margin-left: 5%;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  height: 40px;
+  padding: 10px;
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 
-.card {
-  padding: 2em;
+.checkItem {
+  display: flex;
+  justify-content: space-between;
+  width: 15%;
+}
+.eventList{
+  overflow: scroll;
+}
+.event {
+  font-size: 20px;
+  width: 80%;
+  margin-left: 5%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.read-the-docs {
-  color: #888;
+hr {
+  border: 1px solid lightgray;
+  margin-left: 5%;
+  width: 90%;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: 5%;
+  color: gray;
+  padding-top: 10px;
+}
+
+button{
+  border: 1px solid;
+  background-color: #F0F8FF;
+  border-radius: 10px;
+  height: 30px;
+  color: gray;
 }
