@@ -35,6 +35,10 @@ function handleOnEventChecked(eventId?: string) :void {
    });
 }
 
+function handleOnEventDelete(eventId: string) {
+    setTodoList(list=> list.filter(el=> el.id !== eventId));
+}
+
   return (
       <div className="container">
         <div className="main">
@@ -44,11 +48,18 @@ function handleOnEventChecked(eventId?: string) :void {
                    onChange={e=> setTodo(e.target.value)}
                    onBlur={() =>  updateTodoList({id:uuidv4(),  todo, isChecked: false})
                }/>
-            {todoList.length > 0 ? <EventList list={todoList} onEventChecked={handleOnEventChecked}/> : <p className="emptyResponse">No events added</p> }
+            {
+                todoList.length > 0
+                ?
+                <EventList
+                    list={todoList}
+                    onEventChecked={handleOnEventChecked}
+                    onEventDelete={handleOnEventDelete}/>
+                : <p className="emptyResponse">No events added</p> }
 
             <hr/>
             <div className="bottom">
-                <button onClick={() => handleOnEventChecked()}>Check All</button>
+                {todoList.length > 0 && <button onClick={() => handleOnEventChecked()}>Check All</button>}
                 <p> {uncheckedCount} items remaining</p>
             </div>
         </div>
